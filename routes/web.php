@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PizzaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',  [PizzaController::class, 'home']);
+Route::get('/about',  [PizzaController::class, 'about']);
+Route::get('/more1',  [PizzaController::class, 'read1']);
+Route::get('/more2',  [PizzaController::class, 'read2']);
+Route::get('/more3',  [PizzaController::class, 'read3']);
 
-Route::get('/about', function () {
-    return view('about');
-});
+

@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\PizzaController;
+use App\Http\Controllers\MailController;
+use App\Models;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,10 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',  [PizzaController::class, 'home']);
-Route::get('/about',  [PizzaController::class, 'about']);
-Route::get('/more1',  [PizzaController::class, 'read1']);
-Route::get('/more2',  [PizzaController::class, 'read2']);
-Route::get('/more3',  [PizzaController::class, 'read3']);
+Route::get('/',  [MailController::class, 'home']);
+Route::post('/', [MailController::class, 'store']);
+Route::get('/about',  [MailController::class, 'about']);
+Route::get('/more1',  [MailController::class, 'read1']);
+Route::get('/more2',  [MailController::class, 'read2']);
+Route::get('/more3',  [MailController::class, 'read3']);
+// Route::get('/store',  [PizzaController::class, 'store']);
 
 

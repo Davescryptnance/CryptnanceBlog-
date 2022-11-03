@@ -13,7 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('email', function (Blueprint $table) {
+            $table->id();
+         
+            $table->string('email')->nullable();
+            
+            
+            $table->timestamps();
+            
+         
+        });
     }
 
     /**
@@ -23,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('email');
     }
 };
